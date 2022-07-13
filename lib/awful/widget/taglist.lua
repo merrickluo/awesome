@@ -369,11 +369,6 @@ function taglist.taglist_label(t, args)
         end
         text = text .. "</span>"
     end
-    if not taglist_disable_icon then
-        if t.icon then
-            icon = t.icon
-        end
-    end
 
     local other_args = {
         shape              = shape,
@@ -382,7 +377,7 @@ function taglist.taglist_label(t, args)
         icon_size          = icon_size,
     }
 
-    return text, bg_color, bg_image, not taglist_disable_icon and icon or nil, other_args
+    return text, bg_color, bg_image, not taglist_disable_icon and t.icon or nil, other_args
 end
 
 -- Remove some callback boilerplate from the user provided templates.
